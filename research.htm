@@ -1,0 +1,94 @@
+
+<div  id="hi2">
+    Hi, I'm Zhe.
+</div>
+
+
+<div id="navigation">
+    <ul>
+            <li><a href="/about" data-navigo>about</a></li>
+            <li><a class="current" href="/research" data-navigo>research</a></li>
+            <li><a href="/contact" data-navigo>contact</a></li>
+    </ul>
+</div>
+
+<div class="pure-g panel" id="research">
+    <div class="pure-u-1-24 pure-u-sm-2-24 pure-u-md-3-24 pure-u-lg-3-24 pure-u-xl-4-24"></div>
+    <div class="pure-u-22-24 pure-u-sm-20-24 pure-u-md-18-24 pure-u-lg-18-24 pure-u-xl-16-24" id="research_intro">
+
+    </div>
+
+
+
+    <div id="gallery">
+
+        <div class="pure-u-24-24 pure-u-sm-12-24 pure-u-md-12-24 pure-u-lg-6-24 pure-u-xl-6-24">
+            <img src="p1.png" />
+        </div>
+        <div class="pure-u-24-24 pure-u-sm-12-24 pure-u-md-12-24 pure-u-lg-6-24 pure-u-xl-6-24">
+            <img src="p2.png" />
+        </div>
+        <div class="pure-u-24-24 pure-u-sm-12-24 pure-u-md-12-24 pure-u-lg-6-24 pure-u-xl-6-24">
+            <img src="p3.png" />
+        </div>
+        <div class="pure-u-24-24 pure-u-sm-12-24 pure-u-md-12-24 pure-u-lg-6-24 pure-u-xl-6-24">
+            <img src="p4.png" />
+        </div>
+    </div>
+
+    <div id="gallery-slide">
+        <div class="slides">
+            <img src="p1.png">
+        </div>
+
+        <div class="slides">
+            <img src="p2.png">
+        </div>
+
+        <div class="slides">
+            <img src="p3.png">
+        </div>
+
+        <div class="slides">
+            <img src="p4.png">
+        </div>
+
+        <div class="slides">
+            <img src="p1.png">
+        </div>
+
+        <div class="btn-layer">
+            <a class="prev-btn" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next-btn" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+</div>
+        
+
+
+<script>
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slides");
+
+        if (n >= slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+        slides[slideIndex].style.display = "block";
+    }
+</script>

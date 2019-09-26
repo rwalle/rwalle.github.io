@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+            <link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/grids-min.css">
+            <link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+            <style>
+                a, a:visited, a:hover {
+                    color: black;
+                    text-decoration: none;
+                }
+
+                #navbar {
+                    width: 100%;
+                }
+                #navbar li {
+                    display:block;
+                    float: left;
+                    padding: 0.1em 0;
+                    margin: 0.2em;
+                }
+
+                .other-panel {
+                    border-bottom: 2px solid transparent;
+                }
+               
+                .other-panel:hover {
+                    border-bottom: 2px solid black;
+                    transition: 0.5s;
+                }
+
+                .current-panel {
+                    border-bottom: 2px solid black;
+                }
+
+
+                .level0-hi {
+                    margin-top: 20em;
+                }
+                .level1-hi {
+                    margin-top: 5em;
+                }
+
+                .hide {
+                    display: none;
+                }
+
+                .show {
+                    display: block;
+                }
+
+                .show-transition { opacity: 1; transition: 0.3s; }
+                .hide-transition { opacity: 0; transition: 0.3s; }
+
+                
+                /*@keyframes level0to1-hi-transition {
+                    
+                    from {margin-top: 20em;}
+                    to {margin-top: 5em;}
+                    
+                }
+
+                @keyframes level1to0-hi-transition {
+                    
+                    from {margin-top: 5em;}
+                    to {margin-top: 20em;}
+                    
+                }
+
+                .level0to1-hi {
+                    transition-name: level0to1-hi-transition;
+                    transition-duration: 0.8s;
+                }
+
+                .level1to0-hi {
+                    transition-name: level1to0-hi-transition;
+                    transition-duration: 0.8s;
+                }*/
+
+                .level0to1-hi {
+                    transition: 0.8s;
+                    margin-top: 5em;
+                }
+
+                .level1to0-hi {
+                    transition: 0.8s;
+                    margin-top: 20em;
+                }
+
+            </style>
+            <script src="//unpkg.com/navigo@6"></script>
+
+    </head>
+    <body>
+        <div id="hi">
+            <div class="pure-u-md-2-5"></div>
+            <div class="pure-u-md-1-5">Hi, I'm Zhe.</div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-md-1-5"></div>
+            <div id="navigation" class="pure-u-1 pure-u-md-3-5"> 
+                <ul id="navbar">
+                    <li><a href="#/about" data-navigo>about</a></li>
+                    <li><a href="#/research" data-navigo>research</a></li>
+                    <li><a href="#/contact" data-navigo>contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-md-1-5"></div>
+            <div id="content" class="pure-u-1 pure-u-md-3-5">
+                <div id="about">
+                    About!!!
+                    <p>see <a href="#/about/tags">tags</a></p>
+                    <p>see <a href="#/about/fav">favorites</a></p>
+                    <div id="tags">some tags!</div>
+                    <div id="fav">my favorites!!!</div>
+                </div>
+                <div id="research">
+                    Research!!!
+                    <p>see <a href="#/research/pub">publications</a></p>
+                    <div id="pub">nothing here</div>
+                </div>
+                <div id="contact">
+                    Contact!!!
+                </div>
+            </div>
+        </div>
+        </div>
+        <script>
+                currentStatus = [0, 0, 0];
+                freshLoad = true;
+                elements = ['hi'];
+                panels = ['about', 'research', 'contact'];
+                details = ['tags', 'fav', 'pub'];
+                allStatus = [
+                    [0, 0, 0], // home, 
+                    [1, 0, 0], // about,
+                    [2, 0, 0], // tags
+                    [2, 0, 1], // favorites
+                    [1, 1, 0], // research
+                    [2, 1, 2], // publications
+                    [1, 2, 0], // contact
+                    
+                    
+                ]
+
+                function action(id) {
+                    targetStatus = allStatus[id];
+                    transition(targetStatus);
+                    currentStatus = targetStatus;
+                }
+
+                function home() { console.log('home'); action(0);  }
+
+                function about() { console.log('about'); action(1); }
+
+                function tags() { console.log('tags'); action(2); }
+
+                function fav() { console.log('fav'); action(3); }
+
+                function research() { console.log('research'); action(4); }
+
+                function pub() { console.log('pub'); action(5); }
+
+                function contact() { console.log('contact'); action(6); }
+
+
+
+
+
+
+                function hideElement(element) {
+                    document.getElementById(element).className = 'hide';
+                }
+
+                function showElement(element) {
+                    document.getElementById(element).className = 'show';
+                }
+
+                function hideElementTransition(element, delay) {
+                    document.getElementById(element).className = 'hide-transition';
+                    setTimeout(function() {
+                        document.getElementById(element).classList.add('hide');
+                    }, delay);
+                }
+
+                function showElementTransition(element, delay) {
+                    document.getElementById(element).className = 'show-transition';
+                    setTimeout(function() {
+                        document.getElementById(element).classList.add('show');
+                    }, delay);
+                }
+
+                function hidePanels() {
+                    panels.forEach(function(item) {
+                        hideElement(item);
+                    });
+                }
+
+                function hideDetails() {
+                    details.forEach(function(item) {
+                        hideElement(item);
+                    })
+                }
+    
+
+                function hidePanelsTransition(delay) {
+                    panels.forEach(function(item) {
+                        hideElementTransition(element, delay);
+                    });
+                }
+
+                function waitandShow(elementName, delay, wait) {
+                    setTimeout(function() {
+                        showElementTransition(elementName, delay);
+                    }, wait);
+                }
+
+                function showUnderline(panel) {
+                    document.getElementById('navbar').children[panel].classList.remove('other-panel');
+                    document.getElementById('navbar').children[panel].classList.add('current-panel');
+                }
+
+                function hideUnderlines() {
+                    panels.forEach(function(item, index) {
+                        document.getElementById('navbar').children[index].classList.remove('current-panel');
+                        document.getElementById('navbar').children[index].classList.add('other-panel');
+                    });
+                }
+
+                function transition(targetStatus) {
+                    currentLevel = currentStatus[0];
+                    currentPanel = currentStatus[1];
+                    currentDetail = currentStatus[2];
+                    
+                    targetLevel = targetStatus[0];
+                    targetPanel = targetStatus[1];
+                    targetDetail = targetStatus[2];
+
+
+                    if (freshLoad) {
+                        elements.forEach(function(item) {
+                            target_class = 'level' + targetLevel.toString() + '-' + item;
+                            document.getElementById(item).className = target_class;
+                        });
+
+                        hidePanels();
+                        hideDetails();
+                        hideUnderlines();
+
+                        if (targetLevel == 1) {
+                            targetPanelName = panels[targetPanel];
+                            waitandShow(targetPanelName, 0, 0);
+                            showUnderline(targetPanel);
+                        }
+                        else if (targetLevel == 2) {
+                            targetPanelName = panels[targetPanel];
+                            waitandShow(targetPanelName, 0, 0);
+                            showUnderline(targetPanel);
+
+                            targetDetailName = details[targetDetail];
+
+                            waitandShow(targetDetailName, 0, 0);
+                        }
+
+                        freshLoad = false;
+
+
+                    }
+                    else {
+                        if (currentLevel!=targetLevel) {
+                            transition_name = 'level' + currentLevel.toString() + 'to' + targetLevel.toString();
+                            elements.forEach(function(item) {
+                                current_class = 'level' + currentLevel.toString() + '-' + item;
+                                target_class = 'level' + targetLevel.toString() + '-' + item;
+                                transition_class = transition_name + '-' + item;
+                                console.log(transition_class);
+
+                                document.getElementById(item).className = transition_class;
+
+                            });
+
+                            if (targetLevel == 0) {
+                                currentPanelName = panels[currentPanel];
+                                hideElementTransition(currentPanelName, 300);
+                                hideUnderlines();
+                            }
+
+                            if (targetLevel == 1) {
+                                targetPanelName = panels[targetPanel];
+                                waitandShow(targetPanelName, 500, 500);
+                                hideUnderlines();
+                                showUnderline(targetPanel);
+
+                            }
+
+                            if (tagetLevel == 2) {
+                                targetDetail = targetStatus[2];
+
+                            }
+                        
+                        
+                        
+                        }
+
+                        else {
+
+                            if (currentPanel != targetPanel) {
+                                currentPanelName = panels[currentPanel];
+                                hideElementTransition(currentPanelName, 300);
+
+                                targetPanelName = panels[targetPanel];
+                                waitandShow(targetPanelName, 500, 500);
+                                hideUnderlines();
+                                showUnderline(targetPanel);
+
+
+                            }
+
+
+                        }
+
+
+                    }
+                }
+
+
+                //page.base(document.location.pathname);
+                var root = null;
+                var useHash = true;
+                //var hash = '#'
+                var router = new Navigo(root, useHash); //, hash;
+                router.on('/', home)
+                .on('/research', research)
+                .on('/research/pub', pub)
+                .on('/about', about)
+                .on('/about/tags', tags)
+                .on('/about/fav', fav)
+                .on('/contact', contact)
+                .resolve();
+
+            </script>
+    </body>
+</html>                

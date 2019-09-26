@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="749px" height="112.5px" viewBox="0 0 749 112.5" enable-background="new 0 0 749 112.5" xml:space="preserve">
+<g id="图层_3">
+	<line fill="none" stroke="#E60012" stroke-width="2" stroke-miterlimit="10" x1="18" y1="48.053" x2="161.961" y2="58"/>
+	<line fill="none" stroke="#E60012" stroke-width="2" stroke-miterlimit="10" x1="161.961" y1="58" x2="445.961" y2="58"/>
+	<line fill="none" stroke="#E60012" stroke-width="2" stroke-miterlimit="10" x1="445.961" y1="58" x2="658" y2="43.517"/>
+	<line fill="none" stroke="#E60012" stroke-width="2" stroke-miterlimit="10" x1="658" y1="43.517" x2="729" y2="43.517"/>
+</g>
+<g id="图层_4">
+	<line fill="none" stroke="#1D2088" stroke-width="2" stroke-miterlimit="10" x1="18" y1="38" x2="445" y2="68"/>
+	<line fill="none" stroke="#1D2088" stroke-width="2" stroke-miterlimit="10" x1="658" y1="53" x2="445" y2="68"/>
+	<line fill="none" stroke="#1D2088" stroke-width="2" stroke-miterlimit="10" x1="658" y1="53" x2="729" y2="43.517"/>
+</g>
+<g id="Fourier" display="none">
+	<text transform="matrix(1 0 0 1 440.1582 -69)" display="inline" font-family="'Helvetica'" font-size="12">FP</text>
+	<text transform="matrix(1 0 0 1 1017.7949 -69)" display="inline" font-family="'Helvetica'" font-size="12">FP</text>
+	<text transform="matrix(1 0 0 1 860.1582 -69)" display="inline" font-family="'Helvetica'" font-size="12">IP</text>
+</g>
+<g id="elements">
+	<g id="lens1_1_">
+		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M161.098,11.438c0,0-14.391,28.779,0,73.255"/>
+		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M160.981,11.439
+			c-0.584-1.168,12.25,35.387,0,73.254"/>
+	</g>
+	<g id="lens1_2_">
+		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M445.098,11.438c0,0-14.391,28.779,0,73.255"/>
+		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M444.98,11.439
+			c-0.584-1.168,12.25,35.387,0,73.254"/>
+	</g>
+	<g display="none">
+		<g display="inline">
+			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="-26.895" y1="48.053" x2="-20.895" y2="48.053"/>
+			
+				<line fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="11.9394,11.9394" x1="-8.955" y1="48.053" x2="1083.504" y2="48.053"/>
+			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="1089.474" y1="48.053" x2="1095.474" y2="48.053"/>
+		</g>
+	</g>
+	<circle cx="18.79" cy="48.066" r="3"/>
+	<g id="lens1_4_">
+		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M658.099,11.438c0,0-14.391,28.778,0,73.255"/>
+		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M657.981,11.439
+			c-0.584-1.168,12.25,35.387,0,73.254"/>
+	</g>
+</g>
+</svg>
