@@ -1,6 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
     <head>
         <title>basic push</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 		<script>
 		  var OneSignal = window.OneSignal || [];
@@ -8,6 +10,7 @@
 			OneSignal.init({
 			  appId: "da516dd0-4679-4839-9a53-d227c83562d1",
 			});
+            OneSignal.sendTag("channel", "yun");
 		  });
 		</script>
 	</head>
