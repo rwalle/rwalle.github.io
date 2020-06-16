@@ -154,8 +154,9 @@ function pub() { console.log('pub'); loadHTML('pub', 'content', postProcessing);
 function contact() { console.log('contact'); loadHTML('contact', 'content', postProcessing); }
 
 var root = null;
-var useHash = false;
-var router = new Navigo(root, useHash); //, hash;
+var useHash = true;
+var hash = '#';
+var router = new Navigo(root, useHash, hash);
 router.on('/', home)
 .on('/research', research)
 .on('/research/pub', pub)
