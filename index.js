@@ -158,10 +158,10 @@ var useHash = true;
 var hash = '#';
 var router = new Navigo(root, useHash, hash);
 router.on('/', home)
-.on('/#research', research)
-.on('/#research/pub', pub)
-.on('/#about', about)
-.on('/#about/tags', tags)
-.on('/#about/fav', fav)
-.on('/#contact', contact)
+.on('/research', research)
+.on('/research/pub', pub)
+.on('/about', about)
+.on('/about/tags', tags)
+.on('/about/fav', fav)
+.on('/contact', contact)
 .resolve();
